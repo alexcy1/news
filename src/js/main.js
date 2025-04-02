@@ -1,7 +1,7 @@
 
 import { loadHeaderFooter } from './utils.mjs';
 import { Header } from './components/Header.mjs';
-import { Footer } from './components/Footer.mjs';
+import { Footer } from './components/footer.mjs';
 import { Newsletter } from './components/Newsletter.mjs';
 import { SignIn } from './components/SignIn.mjs';
 import { ForgotPassword } from './forgotPassword.js';
