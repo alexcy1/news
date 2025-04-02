@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Erruki News Aggregator" />
+    <meta name="author" content="Alexander Cyril" />
+
+    <!-- Social Media Meta Tags -->
+    <!-- Essential META Tags -->
+    <meta property="og:title" content="Erruki News" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://alexcy1.github.io/wdd231/project/images/erruki.png"
+    />
+    <meta
+      property="og:url"
+      content="https://alexcy1.github.io/wdd231/project/index.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Non-Essential, But Recommended -->
+    <meta
+      property="og:description"
+      content="Welcome to the Erruki News Aggregator"
+    />
+    <meta property="og:site_name" content="Erruki, Inc." />
+    <meta name="twitter:image:alt" content="Erruki News Aggregator" />
+    <meta
+      name="twitter:image"
+      content="https://alexcy1.github.io/wdd231/chamber/nigeria.png"
+    />
+
+    <!-- Non-Essential, But Required for Analytics (Facebook and Twitter ID) -->
+    <meta property="fb:profile_id" content="61550933037221" />
+    <meta property="fb:app_id" content="YOUR_ACTUAL_APP_ID" />
+    <meta name="twitter:site" content="@Sanchez02300690" />
+    <meta name="twitter:title" content="Erruki News" />
+    <meta
+      name="twitter:description"
+      content="Welcome to the Erruki News Aggregator"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon_io//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon_io//favicon-16x16.png"
+    />
+
+    <!-- Title -->
+    <title>Erruki News</title>
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <script type="module" src="./js/main.js"></script>
+    <!-- <script src="#" defer></script> -->
+  </head>
+
+  <body>
+    <header id="main-header"></header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-grid">
+                <div class="auth-content">
+                    <h2>Update Your Profile</h2>
+                    <p>Keep your information current to get the best experience.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">🔄</div>
+                            <div class="feature-text">Update your personal details</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">📝</div>
+                            <div class="feature-text">Edit your professional information</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🖼️</div>
+                            <div class="feature-text">Change your profile picture</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="auth-form">
+                    <div class="form-container">
+                        <h3>Profile Information</h3>
+                        
+                        <!-- Form Error Message -->
+                        <div id="form-error" class="error-message" style="display: none;"></div>
+                        
+                        <form id="update-profile-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your full name">
+                                <div id="name-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" placeholder="Your username" disabled>
+                                <div id="username-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your email" disabled>
+                                <div id="email-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="biography">Biography</label>
+                                <textarea id="biography" name="biography" placeholder="Tell us about yourself" rows="6" style="width: 100%; min-height: 120px;"></textarea>
+                                <div id="biography-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="professionalInfo">Professional Information</label>
+                                <textarea id="professionalInfo" name="professionalInfo" placeholder="Your professional background" rows="6" style="width: 100%; min-height: 120px;"></textarea>
+                                <div id="professionalInfo-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="profileImage">Profile Image URL</label>
+                                <input type="url" id="profileImage" name="profileImage" placeholder="https://example.com/image.jpg">
+                                <small>Or upload to a service like <a href="https://imgur.com" target="_blank">Imgur</a></small>
+                                <div id="profileImage-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <button type="submit" class="btn">
+                                <span class="btn-text">Update Profile</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="main-footer"></footer>
+    <script type="module" src="./js/updateProfile.js"></script>
+
+    <script type="module">
+      import { AuthGuard } from './js/services/AuthGuard.mjs';
+      AuthGuard.redirectIfAuthenticated();
+    </script>
+    
+  </body>
+</html>

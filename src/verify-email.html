@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Erruki News Aggregator" />
+    <meta name="author" content="Alexander Cyril" />
+
+    <!-- Social Media Meta Tags -->
+    <!-- Essential META Tags -->
+    <meta property="og:title" content="Erruki News" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://alexcy1.github.io/wdd231/project/images/erruki.png"
+    />
+    <meta
+      property="og:url"
+      content="https://alexcy1.github.io/wdd231/project/index.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Non-Essential, But Recommended -->
+    <meta
+      property="og:description"
+      content="Welcome to the Erruki News Aggregator"
+    />
+    <meta property="og:site_name" content="Erruki, Inc." />
+    <meta name="twitter:image:alt" content="Erruki News Aggregator" />
+    <meta
+      name="twitter:image"
+      content="https://alexcy1.github.io/wdd231/chamber/nigeria.png"
+    />
+
+    <!-- Non-Essential, But Required for Analytics (Facebook and Twitter ID) -->
+    <meta property="fb:profile_id" content="61550933037221" />
+    <meta property="fb:app_id" content="YOUR_ACTUAL_APP_ID" />
+    <meta name="twitter:site" content="@Sanchez02300690" />
+    <meta name="twitter:title" content="Erruki News" />
+    <meta
+      name="twitter:description"
+      content="Welcome to the Erruki News Aggregator"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon_io//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon_io//favicon-16x16.png"
+    />
+
+    <title>Erruki News - Sign Up</title>
+    
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Nuclear option for existing API links
+      if (window.location.pathname.includes('/api/users/verify-email')) {
+        const token = new URLSearchParams(window.location.search).get('token');
+        if (token) {
+          localStorage.setItem('force-api-verify', token);
+          window.location.href = '/verify-email.html?force_api=true';
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/auth.css" />
+    <script type="module" src="./js/main.js"></script>
+    
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <main class="auth-container">
+      <div class="verification-card">
+          <!-- Pending Verification State -->
+          <div id="verification-container">
+              <h1>Verify Your Email</h1>
+              <div class="verification-message">
+                  <p>We've sent a verification link to <strong id="user-email"></strong>.</p>
+                  <p>Please check your email and click the link to verify your account.</p>
+              </div>
+              <div class="resend-link">
+                  Didn't receive the email? <a href="/resend_verification_email.html">Resend verification</a>
+              </div>
+          </div>
+  
+          <!-- Success State -->
+           <br>
+          <div id="success-container" style="display: none;">
+              <h1>Email Verified Successfully!</h1>
+              <div class="success-message">
+                  <p>Your email has been successfully verified.</p>
+                  <p>You can now sign in to your account.</p>
+              </div>
+              <a href="signin.html">
+                <button id="signin-btn" class="btn">Continue to Sign In</button></a>
+              <p class="countdown">Auto-redirect in <span id="countdown">5</span> seconds</p>
+          </div>
+  
+          <!-- Error State -->
+          <div id="error-state" style="display:none;">
+              <h1>⚠️ Verification Failed</h1>
+              <p>The verification link is invalid or expired.</p>
+              <a href="/resend_verification_email.html" class="btn">Resend Verification Email</a>
+          </div>
+      </div>
+  </main>
+
+
+    <footer class="footer" id="main-footer"></footer>
+
+    <!-- Add the verify email script -->
+    <script type="module" src="./js/verify-email.js"></script>
+    
+</body>
+</html>

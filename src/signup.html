@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Erruki News Aggregator" />
+    <meta name="author" content="Alexander Cyril" />
+
+    <!-- Social Media Meta Tags -->
+    <!-- Essential META Tags -->
+    <meta property="og:title" content="Erruki News" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://alexcy1.github.io/wdd231/project/images/erruki.png"
+    />
+    <meta
+      property="og:url"
+      content="https://alexcy1.github.io/wdd231/project/index.html"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Non-Essential, But Recommended -->
+    <meta
+      property="og:description"
+      content="Welcome to the Erruki News Aggregator"
+    />
+    <meta property="og:site_name" content="Erruki, Inc." />
+    <meta name="twitter:image:alt" content="Erruki News Aggregator" />
+    <meta
+      name="twitter:image"
+      content="https://alexcy1.github.io/wdd231/chamber/nigeria.png"
+    />
+
+    <!-- Non-Essential, But Required for Analytics (Facebook and Twitter ID) -->
+    <meta property="fb:profile_id" content="61550933037221" />
+    <meta property="fb:app_id" content="YOUR_ACTUAL_APP_ID" />
+    <meta name="twitter:site" content="@Sanchez02300690" />
+    <meta name="twitter:title" content="Erruki News" />
+    <meta
+      name="twitter:description"
+      content="Welcome to the Erruki News Aggregator"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon_io//favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon_io//favicon-16x16.png"
+    />
+
+    <title>Erruki News - Sign Up</title>
+    
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/auth.css" />
+    <script type="module" src="./js/main.js"></script>
+</head>
+
+<body>
+    <header id="main-header"></header>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-grid">
+                <div class="auth-content">
+                    <h2>Join Our Community</h2>
+                    <p>Sign up to get personalized news updates, save articles, and join the conversation.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <div class="feature-icon">📰</div>
+                            <div class="feature-text">Personalized news feed</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🔔</div>
+                            <div class="feature-text">Breaking news alerts</div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">💬</div>
+                            <div class="feature-text">Comment on articles</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="auth-form">
+                    <div class="form-container">
+                        <h3>Sign Up</h3>
+                        
+                        <!-- Form Error Message -->
+                        <div id="form-error" class="error-message" style="display: none;"></div>
+                        
+                        <form id="signup-form">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" id="username" name="username" placeholder="e.g., john_doe" required>
+                                <div id="username-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="e.g., john.doe@example.com" required>
+                                <div id="email-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                                <small class="password-hint">Password must be at least 8 characters with letters, numbers, and special characters</small>
+                                <div id="password-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                <div id="confirmPassword-error" class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-options">
+                                <div class="terms-checkbox">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                                    <div id="terms-error" class="error-message" style="display: none;"></div>
+                                </div>
+                            </div>
+                            <!-- <button type="submit" class="btn">Create Account</button> -->
+                            <button type="submit" class="btn">
+                                <span class="btn-text">Create Account</span>
+                            </button>
+                        </form>
+                        <div class="divider">
+                            <span>OR</span>
+                        </div>
+                        <button class="google-btn">
+                            <div class="google-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                                    <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                        <path d="M21.35,11.1H12v3.2h5.59c-0.56,2.69-2.93,4.7-5.59,4.7c-3.31,0-6-2.69-6-6s2.69-6,6-6c1.54,0,2.94,0.58,4,1.54l2.25-2.25 C16.19,4.28,14.2,3.5,12,3.5c-4.69,0-8.5,3.81-8.5,8.5s3.81,8.5,8.5,8.5c4.97,0,8.5-3.5,8.5-8.5C20.5,11.83,20.35,11.1,21.35,11.1z" fill="#4285F4"></path>
+                                        <path d="M3.5,12c0-4.69,3.81-8.5,8.5-8.5c2.2,0,4.19,0.78,5.75,2.09L15.5,7.84C14.44,6.88,13.04,6.3,11.5,6.3c-3.31,0-6,2.69-6,6 s2.69,6,6,6c2.66,0,5.03-2.01,5.59-4.7H11.5V11.1h9.85c0.12,0.73,0.15,1.46,0.15,2.2c0,5-3.53,8.5-8.5,8.5 C7.31,21.8,3.5,17.99,3.5,12z" fill="#EA4335"></path>
+                                        <path d="M11.5,3.5c-4.69,0-8.5,3.81-8.5,8.5s3.81,8.5,8.5,8.5c4.97,0,8.5-3.5,8.5-8.5c0-0.74-0.03-1.47-0.15-2.2H11.5v3.2h5.59 c-0.56,2.69-2.93,4.7-5.59,4.7c-3.31,0-6-2.69-6-6s2.69-6,6-6c1.54,0,2.94,0.58,4,1.54l2.25-2.25C15.69,4.28,13.7,3.5,11.5,3.5z" fill="#FBBC05"></path>
+                                        <path d="M11.5,12c0,3.31,2.69,6,6,6c2.66,0,5.03-2.01,5.59-4.7H17.5c-0.56,2.69-2.93,4.7-5.59,4.7c-3.31,0-6-2.69-6-6s2.69-6,6-6 c1.54,0,2.94,0.58,4,1.54l2.25-2.25C16.19,4.28,14.2,3.5,12,3.5c-4.69,0-8.5,3.81-8.5,8.5H11.5z" fill="#34A853"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <span>Sign up with Google</span>
+                        </button>
+                        <div class="signup-link">
+                            Already have an account? <a href="signin.html">Sign in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="main-footer"></footer>
+
+    <!-- Add the signup script -->
+    <script type="module" src="./js/signup.js"></script>
+</body>
+</html>

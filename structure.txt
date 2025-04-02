@@ -1,0 +1,70 @@
+src/js/
+├── utils.mjs               # Core utilities (enhanced)
+├── validation.mjs          # New validation utilities
+├── main.js                 # Entry point (uses .js for HTML import)
+├── components/             # Component classes
+│   ├── BaseComponent.mjs   # New base component class
+│   ├── Header.mjs          # Header/Nav (updated)
+│   ├── Footer.mjs          # Footer (updated)
+│   └── Newsletter.mjs      # Newsletter (updated)
+└── services/               # Supporting services
+│   ├── DOMService.mjs      # DOM helpers (updated)
+│   └── ErrorService.mjs    # New error handling service
+│
+│── index.html
+│── signin.html
+│── signup.html
+│── forogt_password.html
+│── reset_password.html
+│── resend_verification.html
+│
+│
+
+
+===========================================================================
+
+
+
+
+"POST https://ellux.onrender.com/api/users/register": "Register a new user",
+REQUEST BODY:
+{
+  "username": "john_doe",
+  "email": "john.doe@example.com",
+  "password": "Password123!",
+  "confirmPassword": "securePassword123"
+}
+
+SIGNUP-FLOW 
+ON SUCCESSFUL SIGNUP, A VERIFICATION EMAIL IS SENT TO THE USER EMAIL. THE USER CLICKS ON IT TO VERIFY EMAIL AND A JSON RESPONSE FROM THE BROWSER SAYS 'EMAIL VERIFICATION IS SUCCESSUL'  THEN THE USER PROCEED TO SIGNIN PAGE
+
+EXISINT PROJECT structure:
+src/js/
+├── utils.mjs               # Core utilities (enhanced)
+├── validation.mjs          # New validation utilities
+├── main.js                 # Entry point (uses .js for HTML import)
+├── components/             # Component classes
+│   ├
+│   ├── Header.mjs          # Header/Nav (updated)
+│   ├── Footer.mjs          # Footer (updated)
+│   └── Newsletter.mjs      # Newsletter (updated)
+└── services/               # Supporting services
+│   ├── DOMService.mjs      # DOM helpers (updated)
+│   └── ErrorService.mjs    # New error handling service
+│
+│── index.html
+│── signin.html
+│── signup.html
+│── forogt_password.html
+│── reset_password.html
+│── resend_verification.html
+│
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+[build]
+  # Use the "dist" directory as the publish directory
+  publish = "dist"
+
+  # Build command for Vite
+  command = "npm run build"
+
+[[redirects]]
+  # Redirect all routes to index.html for SPAs
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # Set CORS headers for JSON routes
+  for = "/json/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/json"
