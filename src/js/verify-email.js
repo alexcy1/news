@@ -35,7 +35,7 @@ function showDefaultState() {
   if (email) {
     document.getElementById('user-email').textContent = email;
   } else {
-    window.location.href = '/signup';
+    window.location.href = '/signup.html';
   }
 }
 
@@ -52,7 +52,7 @@ function startRedirectCountdown() {
 
     if (seconds <= 0) {
       clearInterval(timer);
-      window.location.href = '/signin';
+      window.location.href = '/signin.html';
     }
   }, 1000);
 }

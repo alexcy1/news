@@ -11,6 +11,19 @@
   to = "/index.html"
   status = 200
 
+# Explicit redirect for signin page
+[[redirects]]
+  from = "/signin"
+  to = "/signin.html"
+  status = 301
+
+# Explicit redirect for all other HTML pages
+[[redirects]]
+  from = "/:page"
+  to = "/:page.html"
+  status = 301
+  conditions = {Key = "query", Pattern = ""}
+
 [[headers]]
   # Set CORS headers for JSON routes
   for = "/json/*"
