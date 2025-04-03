@@ -52,9 +52,46 @@
 
   <body>
     <header id="main-header"></header>
-    <h1>JESUS IS LORD</h1>
-    <h1>JESUS IS LORD</h1>
-    <h1>JESUS IS LORD</h1>
+
+
+     <!-- Main Content -->
+<main class="main-content-wrapper">
+
+  <!-- SLIDER ===================================================================-->
+  <section class="slider">
+      <div class="slider-container" id="slider">
+          <!-- Article cards will be dynamically inserted here -->
+      </div>
+      <button class="arrow left" id="prev">❮</button>
+      <button class="arrow right" id="next">❯</button>
+  </section>
+  
+
+<!-- ARTICLES/NEWS ============================================================-->
+<div class="article-wrapper"> 
+  <section class="trending-sections">
+  </section>
+
+  <section class="articles-container">
+  </section>
+
+  <button id="load-more" class="load-more-button">Load More</button>
+
+  <div id="article-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-abstract"></p>
+      <!-- Replace src="." with empty src or placeholder -->
+      <img id="modal-image" src="" alt="Article image" loading="lazy">
+      <p id="modal-date"></p>
+      <button id="view-article" class="view-article-button">View Full Article</button>
+    </div>
+  </div>
+
+  </div>
+</div>
+</main>
 
 <footer class="footer" id="main-footer"></footer>
 

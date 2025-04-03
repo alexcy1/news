@@ -91,6 +91,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         about: resolve(__dirname, "src/about.html"),
+        services: resolve(__dirname, "src/services.html"),
         signin: resolve(__dirname, "src/signin.html"),
         signup: resolve(__dirname, "src/signup.html"),
         forgot_password: resolve(__dirname, "src/forgot-password.html"),
@@ -99,6 +100,7 @@ export default defineConfig({
         verify_email: resolve(__dirname, "src/verify-email.html"),
         profile: resolve(__dirname, "src/profile.html"),
         update_profile: resolve(__dirname, "src/update-profile.html"),
+        
       },
     },
   },
