@@ -1,31 +1,37 @@
 [build]
-  # Use the "dist" directory as the publish directory
   publish = "dist"
-
-  # Build command for Vite
   command = "npm run build"
 
-[[redirects]]
-  # Redirect all routes to index.html for SPAs
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Explicit redirect for signin page
+# Specific HTML page redirects (must come FIRST)
 [[redirects]]
   from = "/signin"
   to = "/signin.html"
   status = 301
 
-# Explicit redirect for all other HTML pages
+[[redirects]]
+  from = "/forgot-password"
+  to = "/forgot-password.html"
+  status = 301
+
+[[redirects]]
+  from = "/reset-password"
+  to = "/reset-password.html"
+  status = 301
+
+# Generic HTML redirect (for all other .html pages)
 [[redirects]]
   from = "/:page"
   to = "/:page.html"
   status = 301
-  conditions = {Key = "query", Pattern = ""}
+  conditions = {Key = "path", Pattern = "/([^.]+)"}  # Only match paths without dots
+
+# SPA fallback (must come LAST)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [[headers]]
-  # Set CORS headers for JSON routes
   for = "/json/*"
     [headers.values]
     Access-Control-Allow-Origin = "*"
