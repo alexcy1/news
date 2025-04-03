@@ -39,16 +39,41 @@ function showDefaultState() {
   }
 }
 
+// function startRedirectCountdown() {
+//   let seconds = 7; // 7 seconds
+//   const countdownElement = document.getElementById('countdown');
+  
+//   // Immediately set the initial display
+//   updateCountdownDisplay(seconds, countdownElement);
+
+//   const timer = setInterval(() => {
+//     seconds--;
+//     updateCountdownDisplay(seconds, countdownElement);
+
+//     if (seconds <= 0) {
+//       clearInterval(timer);
+//       window.location.href = '/signin.html';
+//     }
+//   }, 1000);
+// }
+
 function startRedirectCountdown() {
-  let seconds = 3 * 60; // 3 minutes in seconds
+  let seconds = 7; // 7 seconds countdown
   const countdownElement = document.getElementById('countdown');
   
+  // Format seconds as "0:07"
+  const formatTime = (sec) => {
+    const mins = Math.floor(sec / 60);
+    const remainingSecs = sec % 60;
+    return `${mins}:${remainingSecs < 10 ? '0' : ''}${remainingSecs}`;
+  };
+
   // Immediately set the initial display
-  updateCountdownDisplay(seconds, countdownElement);
+  countdownElement.textContent = formatTime(seconds);
 
   const timer = setInterval(() => {
     seconds--;
-    updateCountdownDisplay(seconds, countdownElement);
+    countdownElement.textContent = formatTime(seconds);
 
     if (seconds <= 0) {
       clearInterval(timer);
