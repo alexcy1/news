@@ -53,32 +53,36 @@
   <body>
     <header id="main-header"></header>
 
-
-    <!-- Main Content -->
-    <main class="main-content-wrapper">
-        <section class="slider">
-        <div class="slider-container" id="slider"></div>
-        <button class="arrow left" id="prev">❮</button>
-        <button class="arrow right" id="next">❯</button>
-        </section>
-        
-        <div class="article-wrapper"> 
-        <section class="trending-sections"></section>
-        <section class="articles-container"></section>
-        <button id="load-more" class="load-more-button">Load More</button>
-        
-        <div id="article-modal" class="modal">
-            <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-abstract"></p>
-            <img id="modal-image" src="." alt="">
-            <p id="modal-date"></p>
-            <button id="view-article" class="view-article-button">View Full Article</button>
-            </div>
+<!-- Main Content -->
+<main class="main-content-wrapper">
+    <div class="favourites-info-card">
+      <h2>Manage Your Favourites</h2>
+      <p>Welcome to your favourites page! Here you can easily manage your favorite articles:</p>
+      <ul>
+        <li><strong>Adding Articles:</strong> Click the <span class="highlight">"Add to Favourites"</span> button on any article card to save it to your favourites.</li>
+        <li><strong>Removing Articles:</strong> If you wish to remove an article, simply click the <span class="highlight">"Delete Favourite"</span> button on the article you want to remove.</li>
+        <li>Enjoy a curated collection of articles tailored to your interests!</li>
+      </ul>
+      <div class="last-visited-card">
+        <p id="lastVisited"></p>
+      </div>
+    </div>
+    
+    <div class="article-wrapper"> 
+      <section class="articles-container"></section>
+      
+      <div id="article-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2 id="modal-title"></h2>
+          <p id="modal-abstract"></p>
+          <img id="modal-image" src="." alt="">
+          <p id="modal-date"></p>
+          <button id="view-article" class="view-article-button">View Full Article</button>
         </div>
-        </div>
-    </main>
+      </div>
+    </div>
+  </main>
 
 <footer class="footer" id="main-footer"></footer>
 
