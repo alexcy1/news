@@ -25,7 +25,7 @@ export class ResetPasswordVerification {
 
         try {
             // Validate token to get userId
-            const response = await fetch(`${AuthService.apiBaseUrl}/api/users/reset-password?token=${this.token}`);
+            const response = await fetch(`${AuthService.apiBaseUrl}/api/users/reset-password-verification?token=${this.token}`);
             
             if (!response.ok) {
                 const errorData = await response.json();
@@ -129,7 +129,7 @@ export class ResetPasswordVerification {
             submitButton.classList.add('loading');
             submitButton.disabled = true;
     
-            const response = await fetch(`${AuthService.apiBaseUrl}/api/users/reset-password`, {
+            const response = await fetch(`${AuthService.apiBaseUrl}/api/users/reset-password-verification`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
