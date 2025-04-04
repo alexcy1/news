@@ -7,7 +7,6 @@ import { AuthLogout } from '../services/AuthLogout.mjs';
 
 export class Header {
   constructor() {
-    // Existing elements
     this.toggler = qs(".navbar-toggler");
     this.navCollapse = qs("#navbarNav");
     this.logoData = {
@@ -23,7 +22,6 @@ export class Header {
       url: "index.html"
     };
 
-    // New auth-related elements
     this.authElements = {
       profileImage: qs('.profile-menu-image'),
       userName: qs('.user-name'),
@@ -34,7 +32,6 @@ export class Header {
 
     this.menuItems = {
       home: qs('.navbar-item a[href="index.html"]')?.parentElement,
-      about: qs('.navbar-item a[href="about.html"]')?.parentElement,
       services: qs('.navbar-item a[href="services.html"]')?.parentElement,
       favourites: qs('.navbar-item a[href="favourites.html"]')?.parentElement,
       userDropdown: qs('.user-dropdown')
@@ -46,7 +43,7 @@ export class Header {
       this.validateData();
       this.setupMobileMenu();
       this.injectBranding();
-      this.setupAuthUI(); // New method for auth functionality
+      this.setupAuthUI(); 
       this.updateMenuVisibility();
     } catch (error) {
       console.error("Header initialization error:", error);
@@ -54,19 +51,15 @@ export class Header {
     }
   }
 
-  // Add this new method
   updateMenuVisibility() {
     const isLoggedIn = Header.checkAuth();
     
-    // Always show home
     if (this.menuItems.home) {
       this.menuItems.home.style.display = 'block';
     }
     
-    // Show/hide other menu items based on auth status
     const itemsToToggle = [
       this.menuItems.home,
-      this.menuItems.about,
       this.menuItems.services,
       this.menuItems.favourites,
       this.menuItems.userDropdown
@@ -78,7 +71,6 @@ export class Header {
       }
     });
     
-    // Special handling for sign-in button
     if (this.authElements.signInBtn) {
       this.authElements.signInBtn.style.display = isLoggedIn ? 'none' : 'block';
       this.authElements.signInBtn.textContent = 'Sign In';
@@ -116,7 +108,6 @@ export class Header {
     }
   }
 
-  // NEW AUTH-RELATED METHODS
   setupAuthUI() {
     this.setupDropdownToggle();
     this.setupDropdownLinks();
@@ -159,22 +150,19 @@ export class Header {
         // Delete account link
         links[2]?.addEventListener('click', (e) => this.handleDeleteUser(e));
 
-        // Logout link (4th item)
+        // Logout link 
         links[3]?.addEventListener('click', (e) => this.handleLogout(e));
     }
 }
 
-// components/Header.mjs
 handleLogout(e) {
   e.preventDefault();
   e.stopPropagation();
   AuthLogout.logout().then(() => {
-      // Optional: You can add any additional cleanup here
       console.log('Logout completed successfully');
   });
 }
 
-// components/Header.mjs
 handleDeleteUser(e) {
   e.preventDefault();
   e.stopPropagation();

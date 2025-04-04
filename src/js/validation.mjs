@@ -27,8 +27,7 @@ export class Validator {
     }
 
 
-    // Sign Up / User Registration
-
+    // Sign Up 
     static validateEmail(email) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!email) throw new Error("Email is required");

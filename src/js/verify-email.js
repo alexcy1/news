@@ -39,26 +39,8 @@ function showDefaultState() {
   }
 }
 
-// function startRedirectCountdown() {
-//   let seconds = 7; // 7 seconds
-//   const countdownElement = document.getElementById('countdown');
-  
-//   // Immediately set the initial display
-//   updateCountdownDisplay(seconds, countdownElement);
-
-//   const timer = setInterval(() => {
-//     seconds--;
-//     updateCountdownDisplay(seconds, countdownElement);
-
-//     if (seconds <= 0) {
-//       clearInterval(timer);
-//       window.location.href = '/signin.html';
-//     }
-//   }, 1000);
-// }
-
 function startRedirectCountdown() {
-  let seconds = 7; // 7 seconds countdown
+  let seconds = 7; 
   const countdownElement = document.getElementById('countdown');
   
   // Format seconds as "0:07"

@@ -40,7 +40,6 @@ export class ProfileService {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No authentication token found');
 
-      // Get current data to maintain non-updated fields
       const currentData = JSON.parse(localStorage.getItem('userProfile')) || {};
 
       const response = await fetch(`${this.apiBaseUrl}/api/users/profile`, {
@@ -50,8 +49,8 @@ export class ProfileService {
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
-          ...currentData.profile, // Include existing profile data
-          ...profileData          // Override with updated fields
+          ...currentData.profile, 
+          ...profileData          
         })
       });
 
@@ -62,7 +61,6 @@ export class ProfileService {
 
       const updatedData = await response.json();
       
-      // Merge with existing data to ensure no fields are lost
       const completeData = {
         user: updatedData.user || currentData.user,
         profile: {

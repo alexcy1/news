@@ -56,10 +56,8 @@ export class Profile {
 
   async loadProfileData() {
     try {
-      // Always fetch fresh data from server
       const freshData = await ProfileService.fetchUserProfile();
       
-      // Merge with existing localStorage data if available
       const existingData = JSON.parse(localStorage.getItem('userProfile')) || {};
       const mergedData = {
         user: { ...existingData.user, ...freshData.user },
@@ -71,11 +69,9 @@ export class Profile {
     } catch (error) {
       console.error('Error loading profile data:', error);
       
-      // Fallback to localStorage if available
       const existingData = JSON.parse(localStorage.getItem('userProfile'));
       if (existingData) return existingData;
       
-      // Ultimate fallback
       return {
         user: { username: 'user', email: '', role: 'user' },
         profile: { 
@@ -186,7 +182,7 @@ export class Profile {
         profile: { 
           ...currentData.profile, 
           ...response.profile,
-          name: formData.name, // Ensure these are from the form
+          name: formData.name,
           biography: formData.biography,
           professionalInfo: formData.professionalInfo
         }
@@ -231,7 +227,6 @@ export class Profile {
   }
 
   updateProfileUI(profileData) {
-    // Ensure we have valid data
     const safeData = profileData || JSON.parse(localStorage.getItem('userProfile')) || {
       user: { username: 'user', email: '', role: 'user' },
       profile: { 

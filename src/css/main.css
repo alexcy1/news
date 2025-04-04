@@ -9,8 +9,8 @@
     z-index: 1000;
     display: flex;
     justify-content: center; 
-    align-items: center; /* Center align items vertically */
-    padding: 0.5rem 0; /* Increased padding for better vertical space */
+    align-items: center; 
+    padding: 0.5rem 0; 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -18,7 +18,7 @@
 .container {
     display: flex;
     justify-content: space-between; 
-    align-items: center; /* Center align items */
+    align-items: center; 
     width: 100%;
     max-width: 1200px; 
     margin: 0 auto; 
@@ -27,7 +27,7 @@
 /* Navbar Brand (Logo) */
 .navbar-brand {
     display: flex;
-    align-items: center; /* Center the logo vertically */
+    align-items: center; 
     flex-grow: 1; 
 }
 
@@ -35,7 +35,7 @@
 .logo-container {
     width: 30px; 
     height: auto;
-    margin-right: 5px; /* Adjusted spacing */
+    margin-right: 5px; 
 }
 
 .logo-container img {
@@ -46,7 +46,7 @@
 /* Navbar Menu and Links */
 .navbar-menu {
     display: flex;
-    align-items: center; /* Center align menu items */
+    align-items: center; 
     flex-grow: 1;
     justify-content: flex-end;
 }
@@ -88,7 +88,7 @@
 
 .navbar-icons {
     display: flex;
-    align-items: center; /* Center align icons */
+    align-items: center; 
     margin-left: auto; 
 }
 
@@ -96,17 +96,17 @@
 .user-dropdown {
     position: relative;
     display: flex; 
-    align-items: center; /* Center align the user dropdown */
-    margin-left: 20px; /* Adjust this value if necessary */
+    align-items: center;
+    margin-left: 20px; 
 }
 
 .user-link {
     display: flex;
-    align-items: center; /* Center align the user link */
+    align-items: center;
     cursor: pointer;
     text-decoration: none;
     color: #fff;
-    padding: 0.5rem 0.7rem; /* Consistent padding */
+    padding: 0.5rem 0.7rem;
     transition: background-color 0.3s ease; 
 }
 
@@ -121,7 +121,7 @@
     height: 30px;
     border-radius: 50%;
     margin-right: 8px;
-    margin-top: -7px; /* Adjusted margin for better vertical alignment */
+    margin-top: -7px; 
 }
 
 .user-name {
@@ -297,21 +297,21 @@ html, body {
   body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures body takes at least full viewport height */
+    min-height: 100vh; 
   }
   
   main {
-    flex: 1 0 auto; /* Key fix: Grow to push footer down, don't shrink */
-    padding-bottom: 20px; /* Optional: Prevents content from touching footer */
+    flex: 1 0 auto; 
+    padding-bottom: 20px; 
   }
   
   .footer {
     background-color: #333;
     color: #fff;
     width: 100%;
-    flex-shrink: 0; /* Prevents footer from shrinking */
+    flex-shrink: 0;
     padding: 20px 0;
-    margin-top: auto; /* Critical: Pushes footer to bottom */
+    margin-top: auto; 
     font-family: Arial, sans-serif;
   }
   
@@ -470,10 +470,6 @@ html, body {
 
     .footer-logo {
         display: none;
-        /* width: 25px !important; 
-        height: 34px !important;
-        margin-bottom: -45px !important;
-        margin-left:280px; */
     }
     
 }
@@ -532,9 +528,8 @@ html, body {
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: #fff; /* #f9f9f9 */
+    background-color: #fff; 
     border-radius: 8px; 
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  */
 }
 
 .slider-container {
@@ -546,7 +541,7 @@ html, body {
 }
 
 .article-card {
-    min-width: 250px; /* 200px */
+    min-width: 250px; 
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -1310,7 +1305,7 @@ body {
 
 /* List item styling */
 .favourites-info-card li {
-    margin: 10px 0; /* Add spacing between list items */
+    margin: 10px 0; 
 }
 
 /* Responsiveness for mobile and smaller screens */
@@ -1583,20 +1578,6 @@ body {
         height: 350px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2038,8 +2019,6 @@ a:hover {
 
 
 
-
-
 /* Base Styles and Variables */
 :root {
     --primary-color: #252525;
@@ -2269,10 +2248,6 @@ strong {
 
 
 
-
-
-
-/* In your main.css */
 /* Button Loading State Styles */
 .btn {
     position: relative;
@@ -2312,7 +2287,6 @@ strong {
     opacity: 0.7;
     cursor: not-allowed;
   }
-
 
 
 

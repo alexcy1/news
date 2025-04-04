@@ -128,7 +128,6 @@ export class HomeNews extends BaseNewsComponent {
       <a href="index.html" class="reload-button">Reload</a>
     `;
 
-    // Store reference to this for event listeners
     const self = this;
     
     this.trendingSections.addEventListener('click', function(event) {
@@ -210,7 +209,6 @@ export class HomeNews extends BaseNewsComponent {
   setupEventListeners() {
     if (!this.articlesContainer) return;
     
-    // Store reference to this for event listeners
     const self = this;
     
     this.articlesContainer.addEventListener('click', function(event) {

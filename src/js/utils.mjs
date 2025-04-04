@@ -8,7 +8,6 @@ export function qs(selector, parent = document) {
   }
 }
 
-// Enhanced localStorage getter
 export function getLocalStorage(key) {
   try {
     const value = localStorage.getItem(key);
@@ -20,7 +19,6 @@ export function getLocalStorage(key) {
   }
 }
 
-// Enhanced localStorage setter
 export function setLocalStorage(key, data) {
   try {
     localStorage.setItem(key, JSON.stringify(data));

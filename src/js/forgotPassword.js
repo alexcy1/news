@@ -50,7 +50,7 @@ export class ForgotPassword {
     async handleForgotPassword() {
         ErrorService.clearFormErrors('forgot-password-form');
         const successElement = qs('#form-success');
-        successElement.style.display = 'none'; // Hide success message on new submission
+        successElement.style.display = 'none'; 
         
         const emailValid = this.validateField('email');
         if (!emailValid) return;

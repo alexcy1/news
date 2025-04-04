@@ -13,11 +13,11 @@ class Signup {
 
   initEventListeners() {
     this.form.addEventListener('submit', async (e) => {
-      e.preventDefault(); // Prevent default form submission
+      e.preventDefault(); 
       await this.handleSignup();
     });
 
-    // Add real-time validation
+    // validation
     qs('#username').addEventListener('blur', () => this.validateField('username'));
     qs('#email').addEventListener('blur', () => this.validateField('email'));
     qs('#password').addEventListener('blur', () => this.validateField('password'));
@@ -106,14 +106,12 @@ class Signup {
     } catch (error) {
       ErrorService.displayFormError('form-error', error.message);
     } finally {
-      // Remove loading state whether successful or not
       this.submitButton.classList.remove('loading');
       this.submitButton.disabled = false;
     }
   }
 }
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   new Signup();
 });

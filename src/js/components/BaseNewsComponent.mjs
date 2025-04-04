@@ -155,7 +155,7 @@ export class BaseNewsComponent {
       
       if (success) {
         console.log(`Successfully updated ${updatedFavorites.length} favorites`);
-        this.favorites = updatedFavorites; // Update local cache
+        this.favorites = updatedFavorites; 
       } else {
         console.error('Failed to update favorites in localStorage');
       }
@@ -208,6 +208,5 @@ export class BaseNewsComponent {
 
   showError(message = 'An unexpected error occurred') {
     console.error('Displaying error:', message);
-    // This should be implemented by child classes
   }
 }

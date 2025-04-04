@@ -12,7 +12,6 @@ export class AuthLogout {
   
     static async logout() {
       try {
-        // Clear all auth-related storage
         ['user', 'token', 'refreshToken'].forEach(item => localStorage.removeItem(item));
         
         // Call backend logout endpoint

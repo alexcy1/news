@@ -102,7 +102,7 @@ export class ResetPasswordVerification {
     async handleResetPassword() {
         ErrorService.clearFormErrors('reset-password-form');
         const successElement = qs('#form-success');
-        successElement.style.display = 'none'; // Hide success message on new submission
+        successElement.style.display = 'none'; 
         
         const submitButton = qs('#reset-password-form .btn');
     
@@ -144,13 +144,11 @@ export class ResetPasswordVerification {
     
             // Show success message
             successElement.style.display = 'block';
-            submitButton.disabled = true; // Keep button disabled after success
+            submitButton.disabled = true;
             
-            // Optional: Clear form fields
             qs('#newPassword').value = '';
             qs('#confirmNewPassword').value = '';
             
-            // Optional: Redirect after delay
             setTimeout(() => {
                 window.location.href = '/signin.html?reset=success';
             }, 3000);
@@ -164,7 +162,6 @@ export class ResetPasswordVerification {
 
 }
 
-// Initialize
 new ResetPasswordVerification();
 
 

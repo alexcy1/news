@@ -2,22 +2,12 @@
 import { ErrorService } from './ErrorService.mjs';
 import { Validator } from '../validation.mjs';
 
-// export class AuthService {
-//   static get apiBaseUrl() {
-//     if (import.meta.env.PROD) {
-//       return import.meta.env.VITE_API_BASE_URL || 'https://ellux.onrender.com';
-//     } else {
-//       // In development, use full backend URL
-//       return 'http://localhost:3000';
-//     }
-//   }
 
 export class AuthService {
   static get apiBaseUrl() {
     if (import.meta.env.PROD) {
       return import.meta.env.VITE_API_BASE_URL || 'https://ellux.onrender.com';
     } else {
-      // In development, use VITE_API_BASE_URL from .env
       return import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000';
     }
   }

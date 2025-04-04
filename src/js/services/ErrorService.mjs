@@ -2,7 +2,7 @@
 export class ErrorService {
   static handleApiError(error) {
     console.error('API Error:', error);
-    return error.message; // Now AuthService formats all error messages
+    return error.message;
   }
 
   static displayFormError(elementId, message) {

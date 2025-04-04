@@ -40,15 +40,11 @@ export class SignIn {
       submitButton.disabled = true;
       submitButton.textContent = 'Signing in...';
 
-      // Call login service
       await AuthSignin.loginUser({ email, password });
-
-      // Redirect happens in AuthSignin.loginUser()
       
     } catch (error) {
       console.error('Login error:', error);
       
-      // Show error to user
       if (this.errorElement) {
         this.errorElement.textContent = error.message;
         this.errorElement.style.display = 'block';

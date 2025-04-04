@@ -85,7 +85,6 @@ export class FavoritesNews extends BaseNewsComponent {
   setupEventListeners() {
     if (!this.articlesContainer) return;
 
-    // Use arrow functions to maintain 'this' context
     this.articlesContainer.addEventListener('click', (event) => {
       const target = event.target;
       
