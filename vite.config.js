@@ -97,6 +97,7 @@ export default defineConfig({
         reset_password: resolve(__dirname, "src/reset-password.html"),
         verify_email: resolve(__dirname, "src/verify-email.html"),
         reset_password_verification: resolve(__dirname, "src/reset-password-verification.html"),
+        reset_password: resolve(__dirname, "src/reset-password.html"),
         profile: resolve(__dirname, "src/profile.html"),
         update_profile: resolve(__dirname, "src/update-profile.html"),
         
