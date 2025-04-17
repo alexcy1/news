@@ -285,8 +285,6 @@ export class ResetPasswordVerification {
         }
     }
 
-// This is just the handleResetPassword method that needs to be updated
-// The rest of your ResetPasswordVerification class can remain the same
 
 async handleResetPassword() {
     ErrorService.clearFormErrors('reset-password-form');
