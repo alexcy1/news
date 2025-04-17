@@ -323,7 +323,8 @@ async handleResetPassword() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(resetData)
+            body: JSON.stringify(resetData),
+            credentials: 'include' // Important for cookies if you're using them
         });
 
         const data = await response.json();
@@ -332,25 +333,34 @@ async handleResetPassword() {
             throw new Error(data.message || 'Password reset failed');
         }
 
-        // Handle successful JSON response
-        if (data.success) {
-            // Show success message
-            successElement.style.display = 'block';
-            submitButton.disabled = true;
-            
-            qs('#newPassword').value = '';
-            qs('#confirmNewPassword').value = '';
-            
+        // Show success message
+        successElement.textContent = data.message;
+        successElement.style.display = 'block';
+        submitButton.disabled = true;
+        
+        qs('#newPassword').value = '';
+        qs('#confirmNewPassword').value = '';
+        
+        // Redirect after delay if URL is provided
+        if (data.redirectUrl) {
             setTimeout(() => {
-                window.location.href = '/signin.html?reset=success';
+                window.location.href = data.redirectUrl;
             }, 3000);
-        } else {
-            throw new Error(data.message || 'Password reset failed');
         }
+        
     } catch (error) {
+        console.error('Reset password error:', error);
         ErrorService.displayFormError('form-error', error.message);
+        
+        // If token is invalid, redirect to forgot password
+        if (error.message.includes('token') && (error.message.includes('invalid') || error.message.includes('expired'))) {
+            setTimeout(() => {
+                window.location.href = '/forgot-password.html?error=' + encodeURIComponent(error.message);
+            }, 3000);
+        }
     } finally {
         submitButton.classList.remove('loading');
+        submitButton.disabled = false;
     }
 }
 }
