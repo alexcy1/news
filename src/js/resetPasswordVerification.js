@@ -190,35 +190,81 @@ import { ErrorService } from './services/ErrorService.mjs';
 import { Validator } from './validation.mjs';
 import { qs, getParam } from './utils.mjs';
 
+// export class ResetPasswordVerification {
+//     constructor() {
+//         this.token = getParam('token');
+//         this.error = getParam('error');
+//         this.userId = null;
+//         this.init();
+//     }
+
+//     async init() {
+//         if (this.error) {
+//             ErrorService.displayFormError('form-error', decodeURIComponent(this.error));
+//             return;
+//         }
+
+//         if (!this.token) {
+//             ErrorService.displayFormError('form-error', '');
+//             return;
+//         }
+
+//         try {
+//             // Validate token to get userId
+//             const response = await fetch(`${AuthService.apiBaseUrl}/api/users/reset-password?token=${this.token}`);
+            
+//             if (!response.ok) {
+//                 const errorData = await response.json();
+//                 throw new Error(errorData.message || 'Invalid or expired token');
+//             }
+
+//             const data = await response.json();
+//             this.userId = data.userId;
+//             this.initializeForm();
+//         } catch (error) {
+//             console.error("Token validation failed:", error);
+//             ErrorService.displayFormError('form-error', error.message);
+//             setTimeout(() => {
+//                 window.location.href = '/forgot-password.html?error=' + encodeURIComponent(error.message);
+//             }, 3000);
+//         }
+
 export class ResetPasswordVerification {
     constructor() {
+        // Debug the token immediately
         this.token = getParam('token');
+        console.log('Token from URL:', this.token); // Add this line
+        
+        if (!this.token) {
+            console.error('No token found in URL');
+            ErrorService.displayFormError('form-error', 'Invalid password reset link');
+            return;
+        }
+
         this.error = getParam('error');
         this.userId = null;
         this.init();
     }
 
     async init() {
-        if (this.error) {
-            ErrorService.displayFormError('form-error', decodeURIComponent(this.error));
-            return;
-        }
-
-        if (!this.token) {
-            ErrorService.displayFormError('form-error', '');
-            return;
-        }
-
         try {
-            // Validate token to get userId
-            const response = await fetch(`${AuthService.apiBaseUrl}/api/users/reset-password?token=${this.token}`);
+            // Validate token - ADD ENCODING
+            const response = await fetch(
+                `${AuthService.apiBaseUrl}/api/users/validate-reset-token?token=${encodeURIComponent(this.token)}`
+            );
             
+            console.log('Token validation response:', response); // Add this
+
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.message || 'Invalid or expired token');
             }
 
             const data = await response.json();
+            console.log('Token validation data:', data); // Add this
+            
+            if (!data.userId) throw new Error('Invalid user ID received');
+            
             this.userId = data.userId;
             this.initializeForm();
         } catch (error) {

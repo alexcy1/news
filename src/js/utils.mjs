@@ -30,20 +30,32 @@ export function setLocalStorage(key, data) {
 }
 
 // URL parameter parser with validation
+// export function getParam(param) {
+//   try {
+//     const queryString = window.location.search;
+//     if (!queryString) return null;
+    
+//     const urlParams = new URLSearchParams(queryString);
+//     const value = urlParams.get(param);
+    
+//     return value || null;
+//   } catch (error) {
+//     console.error(`getParam error for param "${param}":`, error);
+//     return null;
+//   }
+// }
+
 export function getParam(param) {
   try {
-    const queryString = window.location.search;
-    if (!queryString) return null;
-    
-    const urlParams = new URLSearchParams(queryString);
-    const value = urlParams.get(param);
-    
-    return value || null;
+      // Handle both hash and query params
+      const url = new URL(window.location.href);
+      return url.searchParams.get(param) || url.hashParams?.get(param) || null;
   } catch (error) {
-    console.error(`getParam error for param "${param}":`, error);
-    return null;
+      console.error(`getParam error for param "${param}":`, error);
+      return null;
   }
 }
+
 
 // Event listener with validation
 export function setClick(selector, callback) {
